@@ -1,0 +1,18 @@
+<html>
+ <head>
+  <script type="text/javascript">
+   var num = 0;
+   var str = prompt("文字列");
+   var keyword = prompt("キーワード");
+   var reg = RegExp(keyword, "g");                                    // 正規表現式を使う
+   var str_without_keyword = str.replace(reg,"");                     // 文字列内の全部のkeywordを削除する
+
+
+   num = (str.length - str_without_keyword.length)/keyword.length;    // 本来の文字列にあるキーワード数は、削除した後の文字列の長さ
+                                                                      // の差を取って、キーワードの長さで割った数値である。
+   window.alert("キーワードの個数="+num+"，新たな文字列="+str_without_keyword);              
+  </script>
+ </head>
+ <body>
+ </body>
+</html>     

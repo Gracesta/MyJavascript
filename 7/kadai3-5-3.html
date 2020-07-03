@@ -1,0 +1,21 @@
+<html>
+ <head>
+
+    <script type="text/javascript">
+        var color_set = new Array("red", "blue", "yellow");                 //　色の情報をArrayに入れる
+        var now = 0;
+        window.setInterval(setcolor, 3000);
+
+        function setcolor(){
+            document.body.style.backgroundColor = color_set[now++];　// nowによって、現在の色情報をDIVに上塗りする、nowに１を足す
+            if(now == 3) now = 0;                                           // nowが３になったら、０に書き換える
+        }
+
+       </script>
+ </head>
+ <body>
+    <div id = "txt1" style = "position:absolute;left:0px;top:0px">I am a student.</div>
+    <br>
+    <button onclick ="window.close()"> 閉じる</button>
+ </body>
+</html>   

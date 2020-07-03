@@ -1,0 +1,24 @@
+<html>
+ <head>
+ </head>
+ <body>
+     
+    <script type="text/javascript">
+        document.write("<table border = 1>");
+        document.write("<tr><td>8<sup>2</sup>の位</td><td>8<sup>1</sup>の位</td><td>8<sup>2</sup>の位</td></tr>");//表のタイトルを作る
+        for(var i=0;i<50;++i){
+            var a = Math.floor(Math.random()*8);
+            var b = Math.floor(Math.random()*8);
+            var c = Math.floor(Math.random()*8);
+            if(a == b && b == c)
+                document.write("<tr style = color:red >");
+            else
+                document.write("<tr>");
+
+            document.write("<td>"+a+"</td>"+"<td>"+b+"</td>"+"<td>"+c+"</td>")
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+ </body>
+</html>

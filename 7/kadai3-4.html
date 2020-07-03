@@ -1,0 +1,25 @@
+<html>
+ <head>
+  <script type="text/javascript">
+   function pmove () {
+    for (i=0; i<document.bkmkmenu.bkmks.length; i++) {
+     if (document.bkmkmenu.elements[i].checked) {
+      document.getElementById("txt").style.color = document.bkmkmenu.elements[i].value; //　radioboxで得た値で背景色を変更
+     }
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <form name = "bkmkmenu">
+   <input type = "radio" name = "bkmks" value = "red" >赤<br>
+   <input type = "radio" name = "bkmks" value = "blue" >青<br>
+   <input type = "radio" name = "bkmks" value = "yellow" >黄<br>
+   <input type = "radio" name = "bkmks" value = "black" >黒<br>
+   <input type = "radio" name = "bkmks" value = "green" >緑<br>
+   <input type = "button" value = "change the color" onclick = "pmove ()"> <!-- 色を変える関数に入る -->
+  </form>
+  <div id = "txt">Where there is a will, there is a way.</div>
+
+ </body>
+</html>

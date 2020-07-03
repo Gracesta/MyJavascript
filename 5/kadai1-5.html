@@ -1,0 +1,31 @@
+<html>
+    <!-- 画像を見る権限には、インタネット環境かつiedのウェブページにログインで認証することが必要である -->
+ <head>
+    <script type="text/javascript">
+        var img1 = "https://www.ied.inf.uec.ac.jp/text/laboratory/javascript/img1.png";
+        var img2 = "https://www.ied.inf.uec.ac.jp/text/laboratory/javascript/img2.png";
+        var img3 = "https://www.ied.inf.uec.ac.jp/text/laboratory/javascript/img3.png";
+        var img_src = new Array(img1,img2,img3);            //三つの画像のURLを保存する配列を作る
+        var now = 0;
+        var slide;
+        function startshow(){
+            slide = window.setInterval(myFucntion, 1000);
+        }
+
+        function stopShow(){
+            window.clearInterval(slide);
+        }
+
+        function myFucntion(){
+            now = Math.floor(Math.random()*3);
+            document.images["myImg1"].src = img_src[now];//関数が呼び出されるたびに、配列中の画像URLを用いて現在の画像を変える
+        }
+
+       </script>
+ </head>
+ <body>
+    <img src="https://www.ied.inf.uec.ac.jp/text/laboratory/javascript/img1.png" name="myImg1"><br>
+    <button onclick = "startshow()">スライドショー開始</button>
+    <button onclick = "stopShow()">スライドショー終了</button>
+ </body>
+</html>     

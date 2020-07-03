@@ -1,0 +1,54 @@
+<html>
+ <head>
+    <table style="border-collapse:collapse" border = 1 id = 'bekijo' >
+
+    </table>
+ </head>
+ <body>
+    <script type="text/javascript">
+        var n, m;
+        function tableAppend(){
+            n = prompt("Give the n");
+            m = prompt("Give the m");
+            var tbl = document.getElementsByTagName('table')[0];    //headで作ったtableを取り寄せる
+            var tbdy = document.createElement('tbody');
+            var title = document.createElement('tr');
+            title.style.background = "lightgray";
+            var subtitle = document.createElement('td');
+            subtitle.appendChild(document.createTextNode("べき数"));title.appendChild(subtitle);
+            subtitle = document.createElement('td');
+            subtitle.appendChild(document.createTextNode(n));title.appendChild(subtitle);
+            subtitle = document.createElement('td');
+            subtitle.appendChild(document.createTextNode(m));title.appendChild(subtitle);
+            subtitle = document.createElement('td');
+            subtitle.appendChild(document.createTextNode("Sum"));title.appendChild(subtitle);
+            tbdy.appendChild(title);
+            for(var i=0;i<=5;++i){                              //それぞれのtableの要素を作ったあと、上位オブジェクトと併合する
+                var tr = document.createElement('tr');
+                var td = document.createElement('td');
+                td.appendChild(document.createTextNode(i));
+                td.style.background = "lightgray";
+                td.setAttribute("align", "center");
+                tr.appendChild(td);
+                var pow = new Array();
+                pow[2] = Math.pow(n, i);
+                pow[3] = Math.pow(m, i);
+                for(var num=2;num<=3;++num){
+                    var td = document.createElement('td');
+                    pow_2 = Math.pow(num, i);
+                    td.appendChild(document.createTextNode(pow[num]));
+                    tr.appendChild(td);
+                }
+
+                td = document.createElement('td');
+                td.appendChild(document.createTextNode(pow[2]+pow[3]));
+                tr.appendChild(td);
+
+                tbdy.appendChild(tr);                         //　一行のデータ(tr)を作り終わったら、textbodyに併合する        
+            }
+            tbl.appendChild(tbdy);                           //　最終的に作り終わったtextbodyを、本来のtableに併合する
+        }
+        tableAppend();
+    </script>
+ </body>
+</html>

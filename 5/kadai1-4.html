@@ -1,0 +1,19 @@
+<html>
+    <!-- 画像を見る権限には、インタネット環境かつiedのウェブページにログインで認証することが必要である -->
+ <head>
+    <script type="text/javascript">
+        function myFucntion(){
+            if(document.images["myImg1"].width == 320){
+                document.images["myImg1"].width = 640;
+                document.images["myImg1"].height = 480;
+                return;
+            }
+            document.images["myImg1"].width = 320;
+            document.images["myImg1"].height = 240;
+        }
+       </script>
+ </head>    
+ <body>
+    <img src="https://www.ied.inf.uec.ac.jp/text/laboratory/javascript/img1.png" width = 640 height = 480 name="myImg1" onclick="myFucntion()">
+ </body>
+</html>     

@@ -1,0 +1,20 @@
+<html>
+ <head>
+  <script type="text/javascript">
+   var d1, d2, y1, y2, m1, m2;
+   y1 = prompt("Input the start Year");
+   m1 = prompt("Input the start Month");
+   d1 = prompt("Input the start Day");
+
+   y2 = prompt("Input the end Year");
+   m2 = prompt("Input the end Month");
+   d2 = prompt("Input the end Day");
+   var date1 = new Date(y1, m1, d1);        // 入力のデータでDATEオブジェクトを実装する
+   var date2 = new Date(y2, m2, d2);        
+
+   window.alert("経過週数："+parseInt((date2-date1)/7/86400000)+"週です。");             
+  </script>
+ </head>
+ <body>
+ </body>
+</html>     

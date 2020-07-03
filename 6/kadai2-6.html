@@ -1,0 +1,63 @@
+<html>
+
+<head>
+<title>練習問題5</title>
+<script type="text/javascript">
+var times, u_hobby, u_name;
+function set_data(){
+   var presentDay, dd, extime;
+   times = 1;
+   u_name = prompt("お名前を入力してください","");
+   u_hobby = prompt("趣味を入力してください","");
+   presentDay = new Date( );
+   dd = presentDay.getDate( );
+   dd=dd+7;
+   presentDay.setDate(dd);
+   extime = presentDay.toGMTString();
+   document.cookie = "username="+u_name +",userhobby="+u_hobby+",times="+times+",;expires=" + extime;//,で区切りを取る
+}
+
+function searchCookie(str){
+   var my_str = str+"=";
+   var data = document.cookie;
+   if(data.indexOf(my_str) == -1) return "";          //　データを探す、無い場合はリターン
+   var index = data.indexOf(my_str) + my_str.length;  //  その文字列が対応するデータを読み取る         
+   var res = "";
+   while(data.charAt(index) != ',') res += data.charAt(index++);  //　区切り",”を読み取るまで、読み取り続ける
+   if(my_str == "times="){                                        //訪問回数のクッキーを訪問する場合、クッキーを更新する
+      var new_times = parseInt(res) + 1;                          //訪問回数+1
+      var presentDay, dd, extime;
+      presentDay = new Date( );
+      dd = presentDay.getDate( );
+      dd=dd+7;
+      presentDay.setDate(dd);
+      extime = presentDay.toGMTString();
+      document.cookie = "username="+u_name +",userhobby="+u_hobby+",times="+new_times+",;expires=" + extime;
+      return new_times;
+   }
+   return res;
+}
+</script>
+</head>
+
+<body>
+<h1>Welcome to this page!!!!</h1>
+<script type="text/javascript">
+if (!document.cookie)
+   set_data( );
+else{
+   var newhobby = prompt("趣味を変更したい場合は入力してください（したくない場合はそのままリターン）");
+   u_name = searchCookie("username");           //クッキーからユーザーネームを読み取る
+
+   if(!newhobby ||newhobby == "")
+      u_hobby = searchCookie("userhobby");      //クッキーから趣味を読み取る
+   else
+      u_hobby = newhobby;
+   times = searchCookie("times");               //クッキーから訪問回数を読み取る
+}
+document.write(u_name + "さん，"+times+"回目閲覧有り難うございます!");
+document.write("趣味は"+u_hobby);
+</script>
+</body>
+
+</html>

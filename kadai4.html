@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script type = "text/javascript">
+            var game_window;
+            var times = 0;
+            var total_score = 0, max,  is_pressed = 1;//is_pressed が1の時に、ボタンを押しても反応しない
+            var right_clicks;
+            function new_round(){
+                is_pressed = 0;
+                if(times == 0){                           // 20回のゲームが終わったら、ゲーム終了
+                    window.alert("total score is "+total_score+ "click right "+right_clicks+" times");
+                    clearInterval(game_window);
+                    return;
+                }
+                max = 0;
+                for(var i=0;i<5;++i){
+                    var x = Math.ceil(Math.random()*100);           //  五つのbuttonにそれぞれの乱数を与える
+                    if( x > max) max = x;                           //  最大数を記録する
+                    document.forms[1].elements[i].value = x;
+                }
+                --times;
+            }
+            function start_game(){
+                times = 20;
+                right_clicks = 0;
+                window.alert("start");
+                game_window = setInterval(new_round, 1000);
+            }
+
+            function check_answer(score){
+                if(is_pressed)                                   //　このラウンドでボタンをすでに一回押していたら、リターン
+                    return;
+                if(score == max){                                //スコアを更新する
+                    ++right_clicks;
+                    total_score += parseInt(score);
+                }else{
+                    total_score -= parseInt(score);
+                }
+                is_pressed = 1;
+                document.getElementById("score_text").innerHTML = "The total score is " + total_score;  //インターフェースのスコアを更新
+            }
+        </script>
+
+    </head>
+    <body>
+        <form name = "start_menu">
+            <input type = "button" name = "startb" value = "START" onclick = "start_game()">
+        </form>
+        <form name="g_switch">
+            <input type="button" name="gs_1" value="SW1" style="width:50px; height: 50px; font-size:20px;" onclick = "check_answer(this.value)">
+            <input type="button" name="gs_2" value="SW2" style="width:50px; height: 50px; font-size:20px;" onclick = "check_answer(this.value)">
+            <input type="button" name="gs_3" value="SW3" style="width:50px; height: 50px; font-size:20px;" onclick = "check_answer(this.value)">
+            <input type="button" name="gs_4" value="SW4" style="width:50px; height: 50px; font-size:20px;" onclick = "check_answer(this.value)">
+            <input type="button" name="gs_5" value="SW5" style="width:50px; height: 50px; font-size:20px;" onclick = "check_answer(this.value)">
+        </form>
+        <div id = "score_text">total score is</div>
+    </body>
+</html>

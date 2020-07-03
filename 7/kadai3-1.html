@@ -1,0 +1,21 @@
+<html>
+ <head>
+  <script type="text/javascript">
+  function visPass () {
+      if(document.forms[0].elements[0].value == 
+            document.forms[0].elements[1].value)            // 入力した二つの文字列が一致すれば、IEDのページを開く
+        window.open("http://www.ied.inf.uec.ac.jp/classes.html");
+      else
+        window.alert ("Password incorrect");
+  }
+  </script>
+ </head>
+ <body>
+  <form>
+  Input username: <input type = "text" size="10"> <br>
+  Input password: <input type = "password" size="10"><br>
+  <input type="button" value = "login" onclick="visPass()">  
+    <!-- ボタンを押せば ログインチェックを始める-->
+  </form>
+ </body>
+</html>

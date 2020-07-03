@@ -1,0 +1,54 @@
+<html>
+
+<head>
+<script type="text/javascript">
+    var window1,window2,window3,window4,window5;
+    function openWindow1(){
+        window1 = window.open("https://www.google.com/");
+    }
+    function closeWindow1(){
+        window1.close();
+    }
+    function openWindow2(){
+        window2 = window.open("https://news.yahoo.co.jp/");
+    }
+    function closeWindow2(){
+        window2.close();
+    }
+    function openWindow3(){
+        window3 = window.open("https://www.uec.ac.jp/");
+    }
+    function closeWindow3(){
+        window3.close();
+    }
+    function openWindow4(){
+        window4 = window.open("https://www.wikipedia.org/");
+    }
+    function closeWindow4(){
+        window4.close();
+    }
+    function openWindow5(){
+        window5 = window.open("https://www.youtube.com/");
+    }
+    function closeWindow5(){
+        window5.close();
+    }
+</script>
+</head>
+
+<body>
+    <table border = 1>
+        <tr>
+            <th>google</th><th>yahoo</th><th>uec</th><th>wiki</th><th>youtube</th>
+        </tr>
+        <tr>
+            <td><button onclick = "openWindow1()" >open</button><button onclick="closeWindow1()">close</button></td>
+            <td><button onclick = "openWindow2()" >open</button><button onclick="closeWindow2()">close</button></td>
+            <td><button onclick = "openWindow3()" >open</button><button onclick="closeWindow3()">close</button></td>
+            <td><button onclick = "openWindow4()" >open</button><button onclick="closeWindow4()">close</button></td>
+            <td><button onclick = "openWindow5()" >open</button><button onclick="closeWindow5()">close</button></td>
+        </tr>
+    </table>
+
+</body>
+</html>

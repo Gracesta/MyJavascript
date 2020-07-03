@@ -1,0 +1,24 @@
+<html>
+ <head>
+  <script type="text/javascript">
+   function prdate ( ) {
+    window.setTimeout ("location.reload ( )", 1000);
+    var today = new Date();
+    var nextyear = new Date(2021,0,1);              //2021.1.1の時間を取る
+    var diffday = parseInt((nextyear- today)/86400000);//2021.1.1と今日の時間の差で日数を求める
+    var h = 23 - today.getHours ( );
+    var m = 59 - today.getMinutes ( );
+    var s = 59 - today.getSeconds ( );
+    var prday = "2020の残り時間:    " + diffday+"日"+h+"時間"+m+"分"+s+"秒";
+    document.write (prday);
+    }
+  </script>
+ </head>
+ <body>
+  <script type="text/javascript">
+   prdate();
+  </script>
+  <br>
+  <button onclick = "window.close()"> 閉じる</button>
+ </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+ <head>
+  <script type="text/javascript">
+   function pmove () {
+    for (i=0; i<document.bkmkmenu.bkmks.length; i++) {
+     if (document.bkmkmenu.elements[i].checked) {
+      window.open(document.bkmkmenu.elements[i].value);
+     }
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <form name = "bkmkmenu">
+   <input type = "radio" name = "bkmks" value = "kadai3-5-1.html" >ブックマーク集<br> 
+   <input type = "radio" name = "bkmks" value = "kadai3-5-2.html" >2020年の残り時間<br>
+   <input type = "radio" name = "bkmks" value = "kadai3-5-3.html" >背景色自動変更<br><!--三つの色を用意した-->
+   <input type = "radio" name = "bkmks" value = "kadai3-5-4.html" >Cookie読み取り<br>   <!--課題2-6-->
+   <input type = "button" value = "move to the selected page" onclick = "pmove ()">
+  </form>
+ </body>
+</html>

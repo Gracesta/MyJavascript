@@ -1,0 +1,34 @@
+
+<html>
+    <head>
+    <title>ブラウザ画面のスクロール</title>
+    <script type = "text/javascript">
+    function scrollDown(){
+        for(var i=0;i<500;++i)
+        window.scrollBy(0,1);
+    }
+    function scrollUp(){
+        for(var i=0;i<500;++i)
+        window.scrollBy(0,-1);
+    }
+
+    function backtoTop(){
+        window.scrollTo(0,0);
+    }
+
+    </script>
+    </head>
+    
+    <body>
+    <h1>クレタ島の風景</h1>
+    写真ごとに上下スクロール<br>
+    <img src="imgGreece1.jpg"><br>
+    <button onclick="scrollDown()">The next photo</button><br>
+    <img src="imgGreece2.jpg"><br>
+    <button onclick="scrollUp()">The previous photo</button>
+    <button onclick="scrollDown()">The next photo</button><br>
+    <img src="imgGreece3.jpg"><br>
+    <button onclick="scrollUp()">The previous photo</button><br>
+    <button onclick="backtoTop()">Top</button><br>
+    </body>
+</html>

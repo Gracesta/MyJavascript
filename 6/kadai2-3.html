@@ -1,0 +1,21 @@
+<html>
+
+<head>
+<script type="text/javascript">
+var x = 0;
+var move_img = window.setInterval(setposition, 100);
+function setposition (mleft,mtop) {
+    x += 10;
+   document.images["myimg"].style.left = x;
+   if( x == 400)
+    clearInterval(move_img);
+}
+</script>
+</head>
+
+<body>
+<img src="imgGreece1.jpg" name="myimg" style="position:absolute;left:0;top:50">
+
+
+</body>
+</html>

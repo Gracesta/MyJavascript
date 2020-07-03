@@ -1,0 +1,21 @@
+<html>
+ <head>
+  <script type="text/javascript">
+   function pmove(){
+    var selected = document.bkmkmenu.bkmks.selectedIndex;
+    document.images["mypic"].src =  document.bkmkmenu.bkmks.options[selected].value;            //select????????????src???
+   }
+  </script>
+ </head>
+ <body>
+     <image src = "imgGreece1.jpg" name = "mypic"></image>
+  <form name = "bkmkmenu">
+    <select name ="bkmks" size = "3">
+        <option value = "imgGreece1.jpg">Greece 1
+        <option value = "imgGreece2.jpg">Greece 2
+        <option value = "imgGreece3.jpg">Greece 3
+    </select>
+    <input type = "button" value ="写真表示" onclick = "pmove ( )">
+ </form>
+ </body>
+</html>
