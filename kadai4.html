@@ -7,6 +7,7 @@
             var right_clicks;
             function new_round(){
                 is_pressed = 0;
+                document.getElementById("left_chance").innerHTML = times +" times left";
                 if(times == 0){                           // 20回のゲームが終わったら、ゲーム終了
                     window.alert("total score is "+total_score+ "click right "+right_clicks+" times");
                     clearInterval(game_window);
@@ -54,5 +55,7 @@
             <input type="button" name="gs_5" value="SW5" style="width:50px; height: 50px; font-size:20px;" onclick = "check_answer(this.value)">
         </form>
         <div id = "score_text">total score is</div>
+        <div id = "left_chance">... times left</div>
+        
     </body>
 </html>
